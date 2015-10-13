@@ -231,7 +231,8 @@ class SaveOperation: Operation {
 				return
 			} else {
 				let relationshipOperation = RelationshipOperation(resource: self.resource)
-				
+				relationshipOperation.spine = self.spine
+
 				relationshipOperation.completionBlock = {
 					if let error = relationshipOperation.result?.error {
 						self.result = Failable(error)
